@@ -1,4 +1,5 @@
 import json
+import os
 
 JSON_FILE = 'clips_file.json' # input
 URL_FILE = 'url_file.txt' # output
@@ -20,6 +21,7 @@ def write_urls( urls, url_file ):
           f.write( f'{url}\n' )
 
 if __name__ == '__main__':
+    os.system( './download_json.sh' )
     urls = get_urls( JSON_FILE )
     urls = urls[ :NUM_CLIPS ]
     write_urls( urls, URL_FILE )
